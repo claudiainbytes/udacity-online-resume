@@ -1,0 +1,283 @@
+* {
+    /*border: 1px solid red !important;
+    font-family: 'Lato', sans-serif;*/
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.clear-fix {
+  overflow: auto;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
+}
+
+.education-entry em {
+  color: #e87daa;
+}
+
+h1 {
+  font-size: 40px;
+  color: #ffed8f;
+  line-height: 48px;
+  display: inline;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #3fc1c9;
+  line-height: 29px;
+  padding: 10px;
+}
+
+h1, h2, h3 {
+  font-family: 'Lora', serif;
+}
+
+h3 {
+  font-style: italic;
+  font-size: 20px;
+  color: #d2912f;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 17px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  padding: 20px 5%;
+}
+
+#header .role {
+  color: #47e9ff;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: right;
+
+}
+
+p {
+  font-size: 14px;
+  color: #333;
+  line-height: 21px;
+}
+
+a {
+  color: #1199c3;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+}
+
+a.online-class-url {
+  color:#e87daa;
+}
+
+a.project-entry-url  {
+  color:#e87daa;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 18px;
+  color: #f3f3f3;
+  line-height: 28px;
+}
+
+#skills-h3 {
+  color: #ffed8f;
+  display: none;
+  font-family: "Roboto", sans-serif;
+}
+
+.orange {
+  background-color: #ff9a00;
+  background-image: url("patterns/shattered-dark.png");
+  color: #ffed8f;
+  font-family: "Roboto", sans-serif;
+}
+
+.orange-text {
+  color: #ffed8f;
+}
+
+.white-text {
+  font-weight: bold;
+  color: #fff;
+}
+
+.gray {
+  background-color: #f6f7d7;
+  background-image: url("patterns/45-degree-fabric-light.png");
+  padding-bottom: 20px;
+  clear: both;
+}
+
+.gray p{
+  color: #6d6242;
+}
+
+.dark-gray {
+  background-color: #ff165d;
+  background-image: url("patterns/shattered-dark.png");
+}
+
+.white{
+  background-color: #ffffff;
+  background-image: url("patterns/climpek.png");
+  padding-bottom: 20px;
+}
+
+#projects img {
+  width: 250px;
+  max-width: 100%;
+}
+
+/* TODO: Replace with image later */
+#header {
+  background-color: #3ec1d3;
+  background-image: url("patterns/shattered-dark.png");
+}
+
+.flex-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
+.center-content {
+  padding: 2.5% 5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.biopic {
+  float: left;
+  padding: 10px;
+  width: 200px;
+  display: none;
+  border-radius: 50%;
+}
+
+img {
+  padding: 10px;
+}
+
+span {
+  padding: 5px;
+}
+
+#lets-connect {
+  text-align: center;
+}
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 450px;
+  width: 100%;
+  padding-bottom: 7%;
+}
+
+/* Media queries to handle various device widths */
+
+@media only screen and (max-width: 1024px) {
+  #lets-connect {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  .biopic {
+    width: 175px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #lets-connect {
+    margin-top: 0;
+  }
+  .biopic {
+    width: 150px;
+  }
+
+  #skills-h3,
+  #skills,
+  .welcome-message {
+    display: none;
+  }
+
+  #mapDiv {
+    padding-bottom: 25%;
+  }
+
+}
+
+@media only screen and (min-width: 750px) {
+  #skills-h3,
+  .biopic {
+    display: block;
+  }
+}
