@@ -15,7 +15,8 @@ var bio = {
 };
 
 var work = {
-    "jobs": [{
+    "jobs": [
+        {
             "employer": "Seidor Colombia",
             "title": "SSR PHP Developer",
             "dates": "JAN 2016 - FEB 2017",
@@ -54,66 +55,68 @@ var work = {
 };
 
 var education = {
-  "schools": [{
-      "name": "American School Way",
-      "location": "Bogotá, Colombia",
-      "degree": "English Course",
-      "majors": ["Level B2.1", "Level B2.2", "Level C1"],
-      "dates": "2016 - 2017"
-    },
-    {
-      "name": "Universidad Santo Tomás",
-      "location": "Bogotá, Colombia",
-      "degree": "Multimedia Management Specialization",
-      "majors": ["Planning", "Digital contents", "Applications", "Business model"],
-      "dates": "2013 - 2015"
-    },
-    {
-      "name": "Universidad Simón Bólivar",
-      "location": "Cúcuta, Colombia",
-      "degree": "Computer Systems Engineering",
-      "majors": ["CS"],
-      "dates": "2000 - 2006"
-    },
-    {
-      "name": "Colegio Cardenal Sancha",
-      "location": "Cúcuta, Colombia",
-      "degree": "Secondary School",
-      "majors": ["Science"],
-      "dates": "1989 - 1999"
-    }
-  ],
-  "onlineCourses": [{
-      "title": "Front-End Web Developer",
-      "school": "Udacity",
-      "dates": "JUN 2017 - now",
-      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-    },
-    {
-      "title": "ES6 Fundamentals",
-      "school": "Udemy",
-      "dates": "AUG 2017",
-      "url": "https://www.udemy.com/ecmascript-6-es2015"
-    },
-    {
-      "title": "Javascript Fundamentals",
-      "school": "Udemy",
-      "dates": "JUL 2017",
-      "url": "https://www.udemy.com/javascript-de-cero-hasta-los-detalles"
-    },
-    {
-      "title": "Intro To Ruby Programming",
-      "school": "Udemy",
-      "dates": "JUNE 2017",
-      "url": "https://www.udemy.com/curso-ruby-rails/"
-    },
-    {
-      "title": "Angular JS",
-      "school": "Udemy",
-      "dates": "MAY 2017",
-      "url": "https://www.udemy.com/aprende-angularjs-facilmente/"
-    }
-  ]
+    "schools": [
+        {
+          "name": "American School Way",
+          "location": "Bogotá, Colombia",
+          "degree": "English Course",
+          "majors": ["Level B2.1", "Level B2.2", "Level C1"],
+          "dates": "2016 - 2017"
+        },
+        {
+          "name": "Universidad Santo Tomás",
+          "location": "Bogotá, Colombia",
+          "degree": "Multimedia Management Specialization",
+          "majors": ["Planning", "Digital contents", "Applications", "Business model"],
+          "dates": "2013 - 2015"
+        },
+        {
+          "name": "Universidad Simón Bólivar",
+          "location": "Cúcuta, Colombia",
+          "degree": "Computer Systems Engineering",
+          "majors": ["CS"],
+          "dates": "2000 - 2006"
+        },
+        {
+          "name": "Colegio Cardenal Sancha",
+          "location": "Cúcuta, Colombia",
+          "degree": "Secondary School",
+          "majors": ["Science"],
+          "dates": "1989 - 1999"
+        }
+    ],
+    "onlineCourses": [
+        {
+          "title": "Front-End Web Developer",
+          "school": "Udacity",
+          "dates": "JUN 2017 - now",
+          "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+        },
+        {
+          "title": "ES6 Fundamentals",
+          "school": "Udemy",
+          "dates": "AUG 2017",
+          "url": "https://www.udemy.com/ecmascript-6-es2015"
+        },
+        {
+          "title": "Javascript Fundamentals",
+          "school": "Udemy",
+          "dates": "JUL 2017",
+          "url": "https://www.udemy.com/javascript-de-cero-hasta-los-detalles"
+        },
+        {
+          "title": "Intro To Ruby Programming",
+          "school": "Udemy",
+          "dates": "JUNE 2017",
+          "url": "https://www.udemy.com/curso-ruby-rails/"
+        },
+        {
+          "title": "Angular JS",
+          "school": "Udemy",
+          "dates": "MAY 2017",
+          "url": "https://www.udemy.com/aprende-angularjs-facilmente/"
+        }
+    ]
 };
 
 var projects = {
@@ -144,8 +147,8 @@ var projects = {
 
 bio.display = function() {
 
-    var formattedName = HTMLheaderName.replace('%data%', bio.name);
-    var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
@@ -202,7 +205,7 @@ bio.contactInfo = function(idContactInfo){
 
 education.display = function() {
 
-    education.schools.forEach(function(school) {
+    this.schools.forEach(function(school) {
 
         $("#education").append(HTMLschoolStart);
 
@@ -219,8 +222,12 @@ education.display = function() {
         if(school.majors.length > 0) {
 
             var majors = " ";
-            school["majors"].forEach(function(major, i, arr) {
-                    (i < (arr.length - 1)) ? majors += major + ", " : majors += major;
+            school.majors.forEach(function(major, i, arr) {
+                    if (i < (arr.length - 1)) {
+                        majors += major + ", ";
+                    } else { 
+                        majors += major;
+                    }
             });
 
             var formattedMajor = HTMLschoolMajor.replace("%data%", majors);
@@ -244,13 +251,11 @@ education.display = function() {
 
     });
 
-
-
 };
 
 work.display = function() {
 
-    for( job in work.jobs ){
+    for( var job in work.jobs ){
 
         $("#workExperience").append(HTMLworkStart);
 
@@ -313,7 +318,7 @@ function inName(name) {
     finalName = finalName[0].charAt(0).toUpperCase() + finalName[0].slice(1) + " " + finalName[1].toUpperCase();
 
     return finalName;
-};
+}
 
 bio.display();
 work.display();

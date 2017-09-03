@@ -245,7 +245,10 @@ span {
 
 @media only screen and (max-width: 1024px) {
   #lets-connect {
-    margin-top: 5%;
+    margin-top: 0;
+  }
+  #mapDiv {
+    padding-bottom: 11%;
   }
 }
 
@@ -270,7 +273,37 @@ span {
   }
 
   #mapDiv {
+    padding-bottom: 15%;
+  }
+
+}
+
+@media only screen and (max-width: 375px) {
+  #lets-connect {
+    margin-top: 0;
+  }
+  .biopic {
+    width: 150px;
+  }
+
+  #skills-h3,
+  #skills,
+  .welcome-message {
+    display: none;
+  }
+
+  #mapDiv {
     padding-bottom: 25%;
+  }
+
+  #header #name {
+    font-size: 31px;
+    display: inline-block;
+  }
+
+  #header .role {
+    margin-left: 0;
+    display: inline-block;
   }
 
 }
