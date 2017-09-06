@@ -14,8 +14,7 @@ var bio = {
 };
 
 var work = {
-    "jobs": [
-        {
+    "jobs": [{
             "employer": "Seidor Colombia",
             "title": "SSR PHP Developer",
             "dates": "JAN 2016 - FEB 2017",
@@ -54,73 +53,70 @@ var work = {
 };
 
 var education = {
-    "schools": [
-        {
-          "name": "American School Way",
-          "location": "Bogotá, Colombia",
-          "degree": "English Course",
-          "majors": ["Level B2.1", "Level B2.2", "Level C1"],
-          "dates": "2016 - 2017"
+    "schools": [{
+            "name": "American School Way",
+            "location": "Bogotá, Colombia",
+            "degree": "English Course",
+            "majors": ["Level B2.1", "Level B2.2", "Level C1"],
+            "dates": "2016 - 2017"
         },
         {
-          "name": "Universidad Santo Tomás",
-          "location": "Bogotá, Colombia",
-          "degree": "Multimedia Management Specialization",
-          "majors": ["Planning", "Digital contents", "Applications", "Business model"],
-          "dates": "2013 - 2015"
+            "name": "Universidad Santo Tomás",
+            "location": "Bogotá, Colombia",
+            "degree": "Multimedia Management Specialization",
+            "majors": ["Planning", "Digital contents", "Applications", "Business model"],
+            "dates": "2013 - 2015"
         },
         {
-          "name": "Universidad Simón Bólivar",
-          "location": "Cúcuta, Colombia",
-          "degree": "Computer Systems Engineering",
-          "majors": ["CS"],
-          "dates": "2000 - 2006"
+            "name": "Universidad Simón Bólivar",
+            "location": "Cúcuta, Colombia",
+            "degree": "Computer Systems Engineering",
+            "majors": ["CS"],
+            "dates": "2000 - 2006"
         },
         {
-          "name": "Colegio Cardenal Sancha",
-          "location": "Cúcuta, Colombia",
-          "degree": "Secondary School",
-          "majors": ["Science"],
-          "dates": "1989 - 1999"
+            "name": "Colegio Cardenal Sancha",
+            "location": "Cúcuta, Colombia",
+            "degree": "Secondary School",
+            "majors": ["Science"],
+            "dates": "1994 - 1999"
         }
     ],
-    "onlineCourses": [
-        {
-          "title": "Front-End Web Developer",
-          "school": "Udacity",
-          "dates": "JUN 2017 - now",
-          "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+    "onlineCourses": [{
+            "title": "Front-End Web Developer",
+            "school": "Udacity",
+            "dates": "JUN 2017 - now",
+            "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
         },
         {
-          "title": "ES6 Fundamentals",
-          "school": "Udemy",
-          "dates": "AUG 2017",
-          "url": "https://www.udemy.com/ecmascript-6-es2015"
+            "title": "ES6 Fundamentals",
+            "school": "Udemy",
+            "dates": "AUG 2017",
+            "url": "https://www.udemy.com/ecmascript-6-es2015"
         },
         {
-          "title": "Javascript Fundamentals",
-          "school": "Udemy",
-          "dates": "JUL 2017",
-          "url": "https://www.udemy.com/javascript-de-cero-hasta-los-detalles"
+            "title": "Javascript Fundamentals",
+            "school": "Udemy",
+            "dates": "JUL 2017",
+            "url": "https://www.udemy.com/javascript-de-cero-hasta-los-detalles"
         },
         {
-          "title": "Intro To Ruby Programming",
-          "school": "Udemy",
-          "dates": "JUNE 2017",
-          "url": "https://www.udemy.com/curso-ruby-rails/"
+            "title": "Intro To Ruby Programming",
+            "school": "Udemy",
+            "dates": "JUNE 2017",
+            "url": "https://www.udemy.com/curso-ruby-rails/"
         },
         {
-          "title": "Angular JS",
-          "school": "Udemy",
-          "dates": "MAY 2017",
-          "url": "https://www.udemy.com/aprende-angularjs-facilmente/"
+            "title": "Angular JS",
+            "school": "Udemy",
+            "dates": "MAY 2017",
+            "url": "https://www.udemy.com/aprende-angularjs-facilmente/"
         }
     ]
 };
 
 var projects = {
-    "projects": [
-        {
+    "projects": [{
             "title": "JanKenPo!",
             "dates": "2017",
             "description": "The popular game as known as Rock, Paper or Scissors. Made using Javascript to understand functions as objects.",
@@ -131,7 +127,7 @@ var projects = {
             "title": "Ruby Sinatra Workshops School",
             "dates": "2017",
             "description": "This is a demo app to create workshops using Ruby and Sinatra. Milligram as micro CSS Framework.",
-            "images": ["12-img-small.jpg","12-img-small-2.jpg"],
+            "images": ["12-img-small.jpg", "12-img-small-2.jpg"],
             "url": "https://github.com/claudiainbytes/ruby-sinatra-workshops-school"
         },
         {
@@ -165,11 +161,11 @@ bio.display = function() {
     HTMLwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(HTMLwelcomeMsg);
 
-    if( bio.skills.length > 0 ) {
+    if (bio.skills.length > 0) {
 
         $("#header").append(HTMLskillsStart);
 
-        for(var i=0; i < 4 ; i++ ){
+        for (var i = 0; i < 4; i++) {
             var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
             $("#skills").append(formattedSkill);
         }
@@ -193,15 +189,15 @@ education.display = function() {
         var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
         $(".education-entry:last").append(formattedLocation);
 
-        if(school.majors.length > 0) {
+        if (school.majors.length > 0) {
 
             var majors = " ";
             school.majors.forEach(function(major, i, arr) {
-                    if (i < (arr.length - 1)) {
-                        majors += major + ", ";
-                    } else { 
-                        majors += major;
-                    }
+                if (i < (arr.length - 1)) {
+                    majors += major + ", ";
+                } else { 
+                    majors += major;
+                }
             });
 
             var formattedMajor = HTMLschoolMajor.replace("%data%", majors);
@@ -255,7 +251,7 @@ projects.display = function() {
 
     var locations = [];
 
-    this.projects.forEach(function(project){
+    this.projects.forEach(function(project) {
 
         $("#projects").append(HTMLprojectStart);
 
@@ -267,13 +263,13 @@ projects.display = function() {
 
         var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
         var formattedProjectURL = HTMLprojectURL.replace("%url%", project.url);
-        var formattedProjectDU= formattedProjectDescription + formattedProjectURL;
+        var formattedProjectDU = formattedProjectDescription + formattedProjectURL;
         $(".project-entry:last").append(formattedProjectDU);
 
-        if( project.images.length > 0 ){
+        if (project.images.length > 0) {
 
             var formattedProjectImage = "";
-            project.images.forEach(function(image){
+            project.images.forEach(function(image) {
                 formattedProjectImage = HTMLprojectImage.replace("%data%", "images/" + image);
                 $(".project-entry:last").append(formattedProjectImage);
             });
@@ -299,14 +295,3 @@ work.display();
 projects.display();
 education.display();
 $("#mapDiv").append(googleMap);
-
-
-
-
-
-
-
-
-
-
-
